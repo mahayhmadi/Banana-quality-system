@@ -129,7 +129,7 @@ This module evaluates the trained model on the test dataset and stores predictio
 |--------|-------------|
 | Produce_Samples | Image info, hash, timestamp |
 | Quality_Results | Class prediction + confidence + freshness index |
-| Shelf_Life_Metrics | Derived shelf-life estimation (days, temperature) |
+| Shelf_Life_Metrics | Derived shelf-life estimation |
 
 ## Streamlit Dashboard (`streamlit_app.py`)
 
@@ -160,7 +160,6 @@ The BananaScan system demonstrates:
 - Consistent preprocessing and color normalization
 - Solid baseline performance (59% accuracy, 0.91 AUC)
 - Low freshness prediction error (MAE = 1.65)
-- Robust, modular pipeline for both research and production deployment
 
 These results validate the effectiveness of the MobileNetV2-based dual-head architecture for fruit quality inspection tasks.
 
