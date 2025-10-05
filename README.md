@@ -131,6 +131,46 @@ This module evaluates the trained model on the test dataset and stores predictio
 | Quality_Results | Class prediction + confidence + freshness index |
 | Shelf_Life_Metrics | Derived shelf-life estimation (days, temperature) |
 
-**Run Evaluation:**
-```bash
-python evaluate_and_db.py
+## Streamlit Dashboard (`streamlit_app.py`)
+
+### Overview
+The dashboard provides an interactive interface for real-time banana quality inspection and visualization.
+
+### Features
+- Upload images or videos
+- Automatic model inference (class + freshness)
+- KPI cards displaying:
+  - Predicted class
+  - Freshness Index (0–10)
+  - Estimated shelf life (days)
+- Dynamic pie chart showing class distribution (from SQLite DB)
+- Embedded video banner and modern black/gold theme
+
+### Behavior
+On image upload, the app:
+1. Reads and resizes the image to 224×224
+2. Runs inference through the trained model
+3. Displays the top class, freshness score, and shelf life
+4. Updates the pie chart with cumulative predictions stored in `produce_quality.db`
+
+---
+
+## Results Summary
+The BananaScan system demonstrates:
+- Consistent preprocessing and color normalization
+- Solid baseline performance (59% accuracy, 0.91 AUC)
+- Low freshness prediction error (MAE = 1.65)
+- Robust, modular pipeline for both research and production deployment
+
+These results validate the effectiveness of the MobileNetV2-based dual-head architecture for fruit quality inspection tasks.
+
+---
+
+## Future Work
+- Expand dataset for rare classes (`rotten`, `overripe`)
+- Extend fine-tuning epochs for better recall
+- Experiment with EfficientNetB0 and ConvNeXt-Tiny
+- Integrate YOLOv8 for automatic banana detection before classification
+- Optimize for mobile inference using TensorFlow Lite
+- Add time-series decay modeling for dynamic shelf-life forecasting
+
