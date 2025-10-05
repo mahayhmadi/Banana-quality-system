@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.ipynb_checkpoints/
+
+# Envs & IDE
+.venv/
+venv/
+env/
+.vscode/
+*.code-workspace
+
+# Data & Artifacts
+banana_dataset/
+*/train_processed/
+*/valid_processed/
+*/test_processed/
+*.db
+*.sqlite
+*.sqlite3
+*.keras
+*.h5
+*.tflite
+models/
+checkpoints/
+
+
+
+
+
+
